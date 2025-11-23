@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Flex Layout</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f3f3f3;
+            padding: 20px;
+        }
+
+
+        .header, .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .main-container {
+            display: flex;
+            gap: 15px;
+            padding: 0 20px;
+        }
+
+        .content {
+            background-color: #ddd;
+            padding: 20px ;
+            text-align: center;
+        }
+
+        .sidebar {
+            background-color: #9b9b9b;
+            padding: 20px ;
+            text-align: center;
+        }
+
+        @media (max-width: 599px) {
+            .main-container {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                gap: 10px;
+            }
+            
+            .content, .sidebar {
+                flex: none; 
+            }
+        }
+
+
+        @media (min-width: 600px) and (max-width: 899px) {
+            .main-container {
+                flex-direction: row;
+            }
+
+            .header, .footer {
+                padding: 20px;
+                font-size: 20px;
+            }
+
+            .content, .sidebar {
+                flex: 1;
+            }
+        }
+
+
+        @media (min-width: 900px) {
+            .main-container {
+                flex-direction: row;
+            }
+
+            .header, .footer {
+                padding: 25px;
+                font-size: 22px;
+            }
+
+            .content {
+                flex: 3;
+            }
+
+            .sidebar {
+                flex: 1.5; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">Responsive Header</header>
+
+    <main class="main-container">
+        <section class="content">Main Content</section>
+        <aside class="sidebar">Sidebar</aside>
+    </main>
+
+    <footer class="footer">Footer</footer>
+
+</body>
+</html>

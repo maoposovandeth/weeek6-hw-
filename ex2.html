@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Responsive Navbar</title>
+    
+    <style>
+   
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 60px; 
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            position: fixed; 
+            top: 0;
+            width: 100%;
+            box-sizing: border-box; 
+            height: 60px;
+        }
+
+        .logo {
+            font-size: 1.8em;
+        }
+
+        .navlink {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navlink li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+        }
+
+        .menuicon {
+            display: none;
+            font-size: 2em;
+            cursor: pointer;
+            user-select: none;
+            transition: transform 0.3s;
+        }
+
+     
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap; 
+                align-items: flex-start;
+                padding-bottom: 15px;
+            }
+            
+       
+            .navlink {
+                display: none; 
+                flex-direction: column;
+                width: 100%;
+                background-color: #222; 
+            }
+            
+            .navlink.active {
+                display: flex;
+            }
+
+            .navlink li {
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+                border-top: 1px solid #444;
+            }
+
+            .navlink li:first-child {
+                border-top: none; 
+            }
+
+            .navlink li a {
+                display: block; 
+                padding: 5px 0;
+            }
+
+            .menuicon {
+                display: block; 
+            }
+
+            .menuicon:hover {
+                transform: rotate(90deg);
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Logo</div>
+
+        <ul class="navlink" id="navLinks"> 
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="menuicon" id="menuToggle">&#9776;</div>
+    </nav>
+
+    <script>
+        const navLinks = document.getElementById('navLinks');
+        const menuToggle = document.getElementById('menuToggle');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>

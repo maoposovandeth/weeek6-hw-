@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 4: Media Query Demo</title>
+    
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .content {
+            padding: 30px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .big {
+            display: inline-block;
+            background-color: #6aab3a;
+            color: white;
+            padding: 15px 30px;
+            font-size: 36px;
+            font-weight: bold;
+            border-radius: 6px;
+        }
+
+        .small {
+            display: none;
+            background-color: #ff5252;
+            color: white;
+            padding: 10px 20px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 6px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .big {
+                display: none;
+            }
+
+            .small {
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="content">
+            <span class="small">I'm SMALL 😬</span>
+            <span class="big">I'm BIG 😱</span>
+        </div>
+    </div>
+
+    <p style="margin-top: 20px; font-size: 0.9em; color: #555;"></p>
+
+</body>
+</html>
